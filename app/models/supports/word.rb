@@ -6,7 +6,7 @@ class Supports::Word
     @course = course
   end
 
-  def user_learned
+  def high_score
     results = Result.includes(:user, :course).where("course_id = ?", @course.id).order_by_column :grade
   end
 

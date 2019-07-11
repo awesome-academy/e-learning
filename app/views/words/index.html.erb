@@ -3,16 +3,17 @@
   <div class="row">
     <div class="col-md-3">
       <div class="list-follower">
-        <h4 class="title text-black my-2"><%= t "word.user_learned" %></h4>
-        <% if @supports.user_learned %>
-          <% @supports.user_learned.each do |result| %>
+        <h4 class="title text-black my-2"><%= t "word.high_score" %></h4>
+        <% if @supports.high_score %>
+          <% @supports.high_score.each do |result| %>
             <div class="d-block user-follow-item">
               <div class="d-flex align-items-center mb-2">
                 <span class="avatar">
                   <%= image_tag result.user_avatar, class: "rounded-circle mx-2", size: Settings.user.avatar_list_follow_profile %>
                 </span>
                 <%= link_to user_path(result.user_id) do %>
-                  <span class="name"><%= result.user_name %></span>
+                  <span class="name"><%= result.user_name %></span>&nbsp;-&nbsp;
+                  <span class="grade text-success"><%= result.grade %></span>
                 <% end %>
               </div>
             </div>
